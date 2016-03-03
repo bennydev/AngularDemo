@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="CustomerApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="customerCtrl.js"></script>
+  </head>
+  <body ng-controller="CustomerCtrl as customerCtrl">
+    <div>
+      <p><label>Förnamn</label><br />
+      <input type="text" ng-model="forNamn" placeholder="Ange förnamn">
+      <p><label>Efternamn</label><br />
+      <input type="text" ng-model="efterNamn" placeholder="Ange efternamn">
+      <p><label>Personnummer</label><br />
+      <input type="text" ng-model="personNummer" placeholder="Ange personNummer">
+	  <p><button ng-click="customerCtrl.addCustomer(forNamn, efterNamn, personNummer)">Lägg till</button>	
+    </div>
+	<div ng-repeat="customer in customerCtrl.customers">
+	<label>Namn: </label>{{customer.firstName + ' ' + customer.lastName}} 	<label>Personnummer: </label>{{customer.personId}}
+
+	</div>
+ </body>
+</html>
