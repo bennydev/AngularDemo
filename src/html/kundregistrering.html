@@ -8,13 +8,13 @@
 <body ng-controller="CustomerCtrl as customerCtrl">
 <div>
     <p><label>F�rnamn</label><br/>
-        <input type="text" ng-model="forNamn" placeholder="Ange f�rnamn">
+        <input type="text" ng-model="forNamn" placeholder="Ange f�rnamn" ng-click="customerCtrl.firstNameStatus.valid = true">
         <label ng-hide="customerCtrl.firstNameStatus.valid">{{customerCtrl.firstNameStatus.errorMessage}}</label>
     <p><label>Efternamn</label><br/>
-        <input type="text" ng-model="efterNamn" placeholder="Ange efternamn">
+        <input type="text" ng-model="efterNamn" placeholder="Ange efternamn" ng-click="customerCtrl.lastNameStatus.valid = true">
         <label ng-hide="customerCtrl.lastNameStatus.valid">{{customerCtrl.lastNameStatus.errorMessage}}</label>
     <p><label>Personnummer</label><br/>
-        <input type="text" ng-model="personNummer" placeholder="Ange personNummer">
+        <input type="text" ng-model="personNummer" placeholder="Ange personNummer" ng-click="customerCtrl.personIdStatus.valid = true">
         <label ng-hide="customerCtrl.personIdStatus.valid">{{customerCtrl.personIdStatus.errorMessage}}</label>
     <p>
         <button ng-click="customerCtrl.addCustomer(forNamn, efterNamn, personNummer)">L�gg till</button>
